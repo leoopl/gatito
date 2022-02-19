@@ -1,32 +1,31 @@
 import React from 'react';
 import {
-  SafeAreaView,
-  StatusBar,
-  FlatList,
-  KeyboardAvoidingView,
-  Platform,
+  FlatList
 } from 'react-native';
 import Item from './Item';
-import globalStyles from '../../styles';
 import ScreenStandard from '../../components/ScreenStandard';
+import StatusCar from '../../components/StatusCar';
 
 const services: Array<{
   id: number;
   name: string;
   price: number;
   description: string;
+  inicialAmout: number;
 }> = [
   {
     id: 1,
     name: 'Banho',
     price: 79.9,
     description: 'NÃO DE BANHO NO SEU GATO, mas se precisar tamo aqui',
+    inicialAmout: 1,
   },
   {
     id: 2,
     name: 'Vacina V4',
     price: 89.9,
     description: 'Uma dose da vacina V4',
+    inicialAmout: 2,
   },
   {
     id: 3,
@@ -34,17 +33,20 @@ const services: Array<{
     price: 99.9,
     description:
       'Uma dose da vacina antirrabica. Seu gato precisa de uma por ano.',
+    inicialAmout: 1,
   },
 ];
 
-export default function Services() {
+export default function Car() {
   return (
     <ScreenStandard>
+      <StatusCar total={0}>
         <FlatList
           data={services}
           renderItem={({ item }) => <Item {...item} />}
           keyExtractor={({ id }) => String(id)}
         />
-    </ScreenStandard>>
-  );
+      </StatusCar>
+    </ScreenStandard>
+  )
 }

@@ -7,5 +7,5 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: cores.escuro,
     textAlign: 'center',
-  }
+  },
 });
