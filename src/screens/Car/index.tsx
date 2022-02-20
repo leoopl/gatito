@@ -38,15 +38,16 @@ const services: Array<{
 ];
 
 export default function Car() {
+  const total = services.reduce((sum, {price, inicialAmout}) => sum + (price * inicialAmout), 0);
+
   return (
-    <ScreenStandard>
-      <StatusCar total={0}>
+    <>
+      <StatusCar total={total}/>
         <FlatList
           data={services}
           renderItem={({ item }) => <Item {...item} />}
           keyExtractor={({ id }) => String(id)}
         />
-      </StatusCar>
-    </ScreenStandard>
+    </>
   )
 }

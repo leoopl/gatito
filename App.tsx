@@ -1,9 +1,14 @@
 import React from 'react';
-import Services from './src/screens/Services';
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
-import Car from './src/screens/Car';
+import Routes from './src/Routes'
+import ScreenStandard from './src/components/ScreenStandard';
+
 
 export default function App() {
-  return <Car />;
+  return(
+    <ScreenStandard>
+    <Routes/>
+    </ScreenStandard>
+  ) 
 }

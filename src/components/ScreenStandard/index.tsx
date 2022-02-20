@@ -2,22 +2,25 @@ import React from 'react';
 import {
   SafeAreaView,
   StatusBar,
-  FlatList,
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import globalStyles from '../../styles';
+import globalStyles, {cores} from '../../styles';
+import styles from './styles'
 
 export default function ScreenStandard({ children }: any) {
   return(
-    <SafeAreaView style={globalStyles.preencher}>
-      <StatusBar />
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        style={globalStyles.preencher}
-      >
-        {children}
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={styles.ajusteTela}>
+        <StatusBar backgroundColor={cores.roxo} />
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          style={globalStyles.preencher}
+        >
+          {children}
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+      <SafeAreaView style={styles.ajusteTelaBaixo}/>
+    </>
   )
 }

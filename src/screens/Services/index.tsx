@@ -39,12 +39,12 @@ const services: Array<{
 
 export default function Services() {
   return (
-    <ScreenStandard>
+    <>
         <FlatList
           data={services}
           renderItem={({ item }) => <Item {...item} />}
           keyExtractor={({ id }) => String(id)}
         />
-    </ScreenStandard>>
-  );
+    </>
+  )
 }
